@@ -13,9 +13,18 @@ from aiohttp import web
 from .wizard import setup_wizard
 
 # Candy
-welcomes = ["Hello", "Hi", "Hey"]
-greetings = ["How are you doing?", "Good to see you again.", "How are things?", "Librusik is awesome, isn't it?", "Too lazy to log into Synergia? :D", "Have a wonderful day!", "Nice to see you.", "Synergia still sucks? :D"]
+welcomes = ["Cześć", "Hej", "Siema"]
 
+greetings = [
+    "Jak się masz?",
+    "Dobrze cię znowu widzieć.",
+    "Jak leci?",
+    "Librusik jest super, prawda?",
+    "Za leniwy, żeby zalogować się do Synergii? :D",
+    "Miłego dnia!",
+    "Miło cię widzieć.",
+    "Synergia dalej ssie? :D"
+]
 
 # Data location
 PATH = os.getcwd()
@@ -116,10 +125,12 @@ def load_encryption_keys():
 	frt = Fernet(key.encode())
 
 def encrypt(what):
+	return what
 	coded = frt.encrypt(what.encode())
 	return coded.decode()
 
 def decrypt(what):
+	return what
 	coded = frt.decrypt(what.encode())
 	return coded.decode()
 

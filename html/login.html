@@ -17,7 +17,7 @@
 	</div>
 	<br><br>
 	<center>
-		<div class="loginbox" id="login">
+		<!-- <div class="loginbox hidden" style="display: none;"  id="login">
 			<button onclick="showdiv('login', 'log_in')" class="moreitem" style="fill: #0D8; color: #0D8;">
 				<div class="icon">login</div>
 				<div>Log in</div>
@@ -33,15 +33,15 @@
 					<div class="subtitle">What, why, when and where.</div>
 				</div>
 			</button>
-		</div>
-		<div class="loginbox hidden" style="display: none" id="log_in">
-			<button class="back" onclick="showdiv('log_in', 'login', true)"></button>
-			<div class="header">Log in</div>
-			<div class="subheader">to your existing Librusik account.</div>
-			<input oninput="usernameit('user')" type="text" id="user" placeholder="Username"><br>
-			<input type="password" id="passwd" placeholder="Password"><br>
-			<button onclick="showdiv('log_in', 'forgotpass')">Forgot password?</button>
-			<button id="loginbutton" class="highlighted" onclick="login()">Log in</button><br>
+		</div> -->
+		<div class="loginbox active" id="log_in">
+			<!-- <button class="back" onclick="showdiv('log_in', 'login', true)"></button> -->
+			<div class="header">Zaloguj się</div>
+			<div class="subheader">do Librusika używając danych dostępowych do systemu Librus</div>
+			<input oninput="usernameit('user')" type="text" id="user" placeholder="Login"><br>
+			<input type="password" id="passwd" placeholder="Hasło"><br>
+			<!-- <button onclick="showdiv('log_in', 'forgotpass')">Forgot password?</button> -->
+			<button id="loginbutton" class="highlighted" onclick="login()">Zaloguj się</button><br>
 		</div>
 		<div class="loginbox hidden" style="display: none" id="forgotpass">
 			<button class="back" onclick="showdiv('forgotpass', 'log_in', true)"></button>

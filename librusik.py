@@ -138,8 +138,6 @@ async def mkaccount(data):
 		userInfo = await librus.get_me()
 		if userInfo == None:
 			return "error"
-		if config["max_users"] <= len(database):
-			return "Database is full."
 		if data["username"] in database:
 			return "Account with provided username already exists!"
 		for x in database:
@@ -321,7 +319,13 @@ async def authenticate(request):
 		data = await request.json()
 		if auth(data):
 			return response("", 200)
-		return response("", 401)
+		
+		data["librusLogin"] = data["username"]
+		data["librusPassword"] = data["password"]
+		info = await mkaccount(data)
+		if info == True:
+			return response("", 200)
+		return response(info,400)
 	except:
 		return response("", 400)
 
@@ -352,7 +356,8 @@ async def index(request):
 	return response(resources["index"] % (config["subdirectory"], hidetiers), 200)
 
 async def login(request):
-	show_register = "" if config["enable_registration"] else "display:none"
+	# show_register = "" if config["enable_registration"] else "display:none"
+	show_register = "display:none"
 	abouts = resources["about"] % parseContact(config["contact_uri"])
 	return response(resources["login"] % (show_register, abouts), 200)
 

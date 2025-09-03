@@ -162,7 +162,7 @@ button.highlighted:hover {
 	transition: background .3s;
 }
 .panelitem > div:not(.icon) {
-	color: transparent;
+	/* color: transparent; */
 	width: 0 !important;
 	white-space: nowrap;
 	transition: width .3s, color .3s;
@@ -176,13 +176,20 @@ button.highlighted:hover {
 .panelitem.active {
 	background: #F46 !important;
 }
+.panelitem:not(.active):not(:has(.more)):not(:has(.settings)) {
+	color: #F46 !important;
+}
+.panelitem:has(.more),
+.panelitem:has(.settings) {
+	color: transparent !important;
+}
 .panelitem.active > * {
 	color: #222 !important;
 }
-.panelitem.active > div.home {
+.panelitem > div.home {
 	width: 51px !important;
 }
-.panelitem.active > div.grades {
+.panelitem > div.grades {
 	width: 58px !important;
 }
 .panelitem.active > div.more {
