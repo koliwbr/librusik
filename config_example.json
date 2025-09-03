@@ -1,0 +1,24 @@
+{
+    "enable_registration": true,
+    "max_users": 8,
+    "name": "-",
+    "passwd": "-",
+    "port": 7777,
+    "listen_address": "0.0.0.0",
+    "subdirectory": "/",
+    "readable_db": false,
+    "notice": null,
+    "check_browser": true,
+    "ssl": false,
+    "pubkey": "/etc/letsencrypt/live/my.domain.com/fullchain.pem",
+    "privkey": "/etc/letsencrypt/live/my.domain.com/privkey.pem",
+    "contact_uri": "librusik@jajestemwojtek.pl",
+    "enable_tiers": false,
+    "tiers_text": "Tiers are enabled to prevent random people using this instance.",
+    "tiers_requirements": {
+        "free": "To get, say thank you.",
+        "plus": "To get, buy me a beer.",
+        "pro": "To get, solve the [puzzle](https://www.youtube.com/watch?v=dQw4w9WgXcQ)."
+    },
+    "debug": false
+}

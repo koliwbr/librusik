@@ -399,6 +399,7 @@ function dim(div) {
 	getByID(div).classList.add("hidden");
 }
 function showdiv(from, to, back) {
+	if(to=='login') to="log_in"
 	buttons(false);
 	var fromdiv = getByID(from);
 	var todiv = getByID(to);
